@@ -1,5 +1,27 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
-    </head>
-</html>
+{% extends "base.html" %}
+{% block title %}Welcome to EasyVax{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <h1>Welcome to the EasyVax</h1>
+    <p>Register or Login Here</p>
+    <form action="/patients" method="post">
+        <label>Name</label>
+        <input name="name" type="text" />
+        <label>Email Address</label>
+        <input name="email-address" type="email" />
+        <label>ID Number</label>
+        <input name="id-number" type="text" />
+        <label>Password</label>
+        <input name="password" type="password" />   
+        <input type="submit">   
+    </form>
+    <form action="/patients" method="post">
+        <label>Email Address</label>
+        <input name="email-address" type="email" />
+        <label>Password</label>
+        <input name="password" type="password" />   
+        <input type="submit">   
+    </form>
+{% endblock %}
