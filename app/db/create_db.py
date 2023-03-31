@@ -24,7 +24,7 @@ create_patient_table_query = (""" CREATE TABLE IF NOT EXISTS PATIENTS
 
 conn.execute(create_patient_table_query)
 
-create_dose_table_query = (""" CREATE TABLE IF NOT EXISTS PATIENTS
+create_dose_table_query = (""" CREATE TABLE IF NOT EXISTS DOSES
                                 (ID            INTEGER            PRIMARY KEY,
                                  VACCINE_ID    CHAR(6)        NOT NULL,
                                  TYPE          TEXT           NOT NULL,
