@@ -1,0 +1,25 @@
+import sqlite3
+
+conn = sqlite3.connect("vaccine_passport.db")
+
+conn.execute("PRAGMA foreign_keys = ON")
+
+conn.execute("INSERT INTO DOCTORS (NAME, GOVERNMENT_ID, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD) VALUES ('John', 'AJZ312', 'john@gmail.com', '312-7293', 'EC9D873829888DVSKJH19827389SKJHF1')")
+
+conn.execute("INSERT INTO DOCTORS (NAME, GOVERNMENT_ID, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD) VALUES ('Albert', 'STU911', 'albert@msn.com', '312-7293', 'CESL229VV0SLKJ34230948CNKVLS')")
+
+conn.execute("INSERT INTO PATIENTS (NAME, EMAIL_ADDRESS, PHONE_NUMBER, DOCTOR_ID) VALUES ('Jack', 'jack@gmail.com', '512-9834', 1)")
+
+conn.execute("INSERT INTO PATIENTS (NAME, EMAIL_ADDRESS, PHONE_NUMBER, DOCTOR_ID) VALUES ('Ivan', 'ivan@yandex.ru', '445-9201', 2)")
+
+conn.execute("INSERT INTO PATIENTS (NAME, EMAIL_ADDRESS, PHONE_NUMBER, DOCTOR_ID) VALUES ('Jane', 'jane@yahoo.com', '213-0581', 2)")
+
+conn.execute("INSERT INTO DOSES (VACCINE_ID, TYPE, VOLUME, DATE, DOSE_NO, PATIENT_ID) VALUES ('1234AB', 'Pfizer', 0.3, 1637218041, 1, 1)")
+
+conn.execute("INSERT INTO DOSES (VACCINE_ID, TYPE, VOLUME, DATE, DOSE_NO, PATIENT_ID) VALUES ('3214AB', 'Pfizer', 0.3, 1639810041, 2, 1)")
+
+conn.execute("INSERT INTO DOSES (VACCINE_ID, TYPE, VOLUME, DATE, DOSE_NO, PATIENT_ID) VALUES ('9763CC', 'Sinopharm', 0.5, 1638859641, 1, 2)")
+
+conn.commit()
+
+conn.close()
